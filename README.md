@@ -46,6 +46,39 @@ La solucion fue instalar la biblioteca cryptography manualmente:
 
 2. `python -m pip install cryptography`
 
+**IMPORTANTE**: Se setea el alias `alias idf='. $HOME/esp/esp-idf/export.sh'` para utilizar el entorno esp-idf.
+
+## Pruebas
+
+1. Se setea el entorno de esp-idf utilizando el alias `idf`.
+
+2. Se configura el integrado de interes: 
+
+```
+idf.py set-target esp32
+
+idf.py menuconfig
+```
+
+La configuracion del integrado **esp32** se realiza por unica vez siempre y cuando el proyecto a desarrollar contenga los *builds* y configuracion determinadas. Se recomiendo setear una variable de entorno global tq se omita este paso.
+
+
+3. Se construye el proyecto `idf.py build`
+
+4. Se busca el puerto serie asignado para el ESP32 segun el comando `ls /dev/cu.*` dando como resultado:
+
+```
+/dev/cu.BLTH                    /dev/cu.Bluetooth-Incoming-Port /dev/cu.Venue                   /dev/cu.usbserial-0001
+```
+
+5. Se realiza la conexion haciendo `idf.py -p /dev/cu.usbserial-0001 flash`.
+
+Si la conexion falla con mensajes del tipo *A fatal error occurred: Failed to connect to ESP32: No serial data received.* o *A fatal error occurred: Failed to connect to ESP32: Invalid head of packet *, visitar esta pagina, [[SOLVED] Failed to connect to ESP32: Timed out waiting for packet header
+](https://randomnerdtutorials.com/solved-failed-to-connect-to-esp32-timed-out-waiting-for-packet-header/). 
+
+
+6. Se monitorean las tareas que se estan realizando en el kit, `idf.py -p /dev/cu.usbserial-0001 monitor`.
+
 
 ### Links de interes
 
