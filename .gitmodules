@@ -1,0 +1,6 @@
+[submodule "dda3-backend"]
+	path = dda3-backend
+	url = git@github.com:nandroidj/dda3-backend.git
+[submodule "dda3-esp32-dht22"]
+	path = dda3-esp32-dht22
+	url = git@github.com:nandroidj/dda3-esp32-dht22.git

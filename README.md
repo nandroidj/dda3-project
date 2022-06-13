@@ -26,7 +26,6 @@
 [project infrastructure](https://github.com/nandroidj/dda3-project/blob/main/imgs/project-infrastructure.png)
 
 
-
 ## Instalacion
 
 Se sigue el paso a paso propuesto en la documentacion de [ESP-ESPRESSIF](https://docs.espressif.com/projects/esp-idf/en/v4.4.1/esp32/get-started/index.html#step-2-get-esp-idf) teniendo las siguientes consideraciones para una correcta instalacion en mac os.
@@ -47,6 +46,7 @@ La solucion fue instalar la biblioteca cryptography manualmente:
 2. `python -m pip install cryptography`
 
 **IMPORTANTE**: Se setea el alias `alias idf='. $HOME/esp/esp-idf/export.sh'` para utilizar el entorno esp-idf.
+
 
 ## Pruebas
 
@@ -78,6 +78,8 @@ Si la conexion falla con mensajes del tipo *A fatal error occurred: Failed to co
 
 
 6. Se monitorean las tareas que se estan realizando en el kit, `idf.py -p /dev/cu.usbserial-0001 monitor`.
+
+
 
 
 ### Links de interes
